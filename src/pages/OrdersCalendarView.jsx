@@ -5,114 +5,63 @@ import Navbar from "../component/Navbar";
 import Sidebar from "../component/sidebar";
 import Box from "@mui/material/Box";
 import MUIDataTable from "mui-datatables";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 import "../style.css";
 
 const currentDate = new Date();
 const currentMonth = currentDate.getMonth();
 const currentYear = currentDate.getFullYear();
 
-const orders = [
+// Updated product details related to Indian Glycols Limited (IGL)
+const products = [
   {
     id: 1,
-    customer: "Alice",
-    product: "Book",
+    name: "Green Ethylene Oxide Derivatives",
+    description: "Used in detergents, surfactants, and personal care products.",
+    customer: "Industry Client 1",
     deliveryDate: new Date(currentYear, currentMonth, 15),
   },
   {
     id: 2,
-    customer: "Bob",
-    product: "Laptop",
+    name: "Specialty Chemicals",
+    description: "Performance chemicals for various industrial applications.",
+    customer: "Industry Client 2",
     deliveryDate: new Date(currentYear, currentMonth, 18),
   },
   {
     id: 3,
-    customer: "Charlie",
-    product: "Shoes",
+    name: "Natural Gums",
+    description: "High-quality gum rosin and turpentine derivatives.",
+    customer: "Industry Client 3",
     deliveryDate: new Date(currentYear, currentMonth, 20),
   },
   {
     id: 4,
-    customer: "David",
-    product: "Headphones",
+    name: "Bio-Based Solvents",
+    description: "Eco-friendly solvents for various industries.",
+    customer: "Industry Client 4",
     deliveryDate: new Date(currentYear, currentMonth, 22),
-  },
-  {
-    id: 5,
-    customer: "Eva",
-    product: "Watch",
-    deliveryDate: new Date(currentYear, currentMonth, 25),
-  },
-  {
-    id: 6,
-    customer: "Frank",
-    product: "Camera",
-    deliveryDate: new Date(currentYear, currentMonth, 28),
-  },
-  {
-    id: 7,
-    customer: "Frank",
-    product: "Camera",
-    deliveryDate: new Date(currentYear, currentMonth, 28),
-  },
-  {
-    id: 8,
-    customer: "Grace",
-    product: "Phone",
-    deliveryDate: new Date(currentYear, currentMonth, 20),
-  },
-  {
-    id: 9,
-    customer: "Henry",
-    product: "Tablet",
-    deliveryDate: new Date(currentYear, currentMonth, 20),
-  },
-  {
-    id: 10,
-    customer: "Isabel",
-    product: "Earphones",
-    deliveryDate: new Date(currentYear, currentMonth, 20),
-  },
-  {
-    id: 11,
-    customer: "Jack",
-    product: "Smartwatch",
-    deliveryDate: new Date(currentYear, currentMonth, 25),
-  },
-  {
-    id: 12,
-    customer: "Katherine",
-    product: "Backpack",
-    deliveryDate: new Date(currentYear, currentMonth, 25),
-  },
-  {
-    id: 13,
-    customer: "Leo",
-    product: "Camera",
-    deliveryDate: new Date(currentYear, currentMonth, 28),
-  },
-  {
-    id: 14,
-    customer: "Mia",
-    product: "Printer",
-    deliveryDate: new Date(currentYear, currentMonth, 28),
   },
 ];
 
 const TileContent = ({ date, view }) => {
   if (view === "month") {
-    const ordersByDate = orders.filter(
-      (order) => order.deliveryDate.toDateString() === date.toDateString()
+    const productsByDate = products.filter(
+      (product) => product.deliveryDate.toDateString() === date.toDateString()
     );
     return (
       <div className="tile-content">
-        {ordersByDate.length > 0 && <p>{ordersByDate.length} orders</p>}
+        {productsByDate.length > 0 && <p>{productsByDate.length} products</p>}
       </div>
     );
   }
   return null;
 };
 
-const OrdersCalendarView = () => {
+const ProductsCalendarView = () => {
   const [date, setDate] = React.useState(new Date());
 
   const onChange = (date) => {
@@ -125,23 +74,33 @@ const OrdersCalendarView = () => {
       label: "ID",
     },
     {
-      name: "customer",
-      label: "Customer",
+      name: "name",
+      label: "Product Name",
     },
     {
-      name: "product",
-      label: "Product",
+      name: "description",
+      label: "Description",
+    },
+    {
+      name: "deliveryDate",
+      label: "Delivery Date",
+      options: {
+        customBodyRender: (value) => {
+          return new Date(value).toDateString();
+        },
+      },
     },
   ];
 
-  const ordersByDate = orders.filter(
-    (order) => order.deliveryDate.toDateString() === date.toDateString()
+  const productsByDate = products.filter(
+    (product) => product.deliveryDate.toDateString() === date.toDateString()
   );
 
-  const data = ordersByDate.map((order) => ({
-    id: order.id,
-    customer: order.customer,
-    product: order.product,
+  const data = productsByDate.map((product) => ({
+    id: product.id,
+    name: product.name,
+    description: product.description,
+    deliveryDate: product.deliveryDate,
   }));
 
   const options = {
@@ -152,11 +111,11 @@ const OrdersCalendarView = () => {
     download: false,
     viewColumns: false,
     setTableProps: () => ({
-        style: {
-          minWidth: "95vh", // Set the minimum width
-          minHeight: "100px", // Set the minimum height
-        },
-      }),
+      style: {
+        minWidth: "95vh",
+        minHeight: "100px",
+      },
+    }),
   };
 
   return (
@@ -167,11 +126,40 @@ const OrdersCalendarView = () => {
         <Box sx={{ display: "flex" }}>
           <Sidebar />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <div className="orders-calendar-view">
+            <div className="products-calendar-view">
               <Calendar onChange={onChange} value={date} tileContent={TileContent} />
-              <div className="orders-list-container">
-                <h3>Orders for {date.toDateString()}</h3>
-                <MUIDataTable  title={"Orders"} data={data} columns={columns} options={options} />
+              <div className="products-list-container">
+                <h3>Products for {date.toDateString()}</h3>
+                <Grid container spacing={3} justifyContent="center">
+                  {productsByDate.length > 0 ? (
+                    productsByDate.map((product) => (
+                      <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
+                        <Card sx={{ backgroundColor: "#e3f2fd", boxShadow: 3 }}>
+                          <CardContent>
+                            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+                              {product.name}
+                            </Typography>
+                            <Typography sx={{ mb: 1 }}>
+                              <strong>Description:</strong> {product.description}
+                            </Typography>
+                            <Typography>
+                              <strong>Client:</strong> {product.customer}
+                            </Typography>
+                            <Typography>
+                              <strong>Delivery Date:</strong>{" "}
+                              {product.deliveryDate.toDateString()}
+                            </Typography>
+                          </CardContent>
+                        </Card>
+                      </Grid>
+                    ))
+                  ) : (
+                    <Typography variant="h6" sx={{ color: "gray" }}>
+                      No products for this date.
+                    </Typography>
+                  )}
+                </Grid>
+                <MUIDataTable title={"Products"} data={data} columns={columns} options={options} />
               </div>
             </div>
           </Box>
@@ -181,4 +169,4 @@ const OrdersCalendarView = () => {
   );
 };
 
-export default OrdersCalendarView;
+export default ProductsCalendarView;

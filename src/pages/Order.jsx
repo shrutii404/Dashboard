@@ -13,28 +13,30 @@ import Navbar from "../component/Navbar";
 import Sidebar from "../component/sidebar";
 import Box from "@mui/material/Box";
 
-const orders = [
-    { id: 1, orderId: "ORD001", customerName: "John Doe", orderDate: "2024-03-10", status: "Pending" },
-    { id: 2, orderId: "ORD002", customerName: "Jane Smith", orderDate: "2024-03-09", status: "Delivered" },
-    { id: 3, orderId: "ORD003", customerName: "Alice Johnson", orderDate: "2024-03-08", status: "Processing" },
-    { id: 4, orderId: "ORD004", customerName: "Bob Brown", orderDate: "2024-03-07", status: "Pending" },
-    { id: 5, orderId: "ORD005", customerName: "Charlie Davis", orderDate: "2024-03-06", status: "Delivered" },
-    { id: 6, orderId: "ORD006", customerName: "Emma Wilson", orderDate: "2024-03-05", status: "Cancelled" },
-    { id: 7, orderId: "ORD007", customerName: "James Taylor", orderDate: "2024-03-04", status: "Processing" },
-    { id: 8, orderId: "ORD008", customerName: "Sophia Martinez", orderDate: "2024-03-03", status: "Pending" },
-    { id: 9, orderId: "ORD009", customerName: "Michael Brown", orderDate: "2024-03-02", status: "Processing" },
-    { id: 10, orderId: "ORD010", customerName: "Olivia Wilson", orderDate: "2024-03-01", status: "Delivered" },
-    { id: 11, orderId: "ORD011", customerName: "William Johnson", orderDate: "2024-02-29", status: "Pending" },
-    { id: 12, orderId: "ORD012", customerName: "Ava Taylor", orderDate: "2024-02-28", status: "Delivered" },
-    { id: 13, orderId: "ORD013", customerName: "Alexander Davis", orderDate: "2024-02-27", status: "Processing" },
-    { id: 14, orderId: "ORD014", customerName: "Mia Wilson", orderDate: "2024-02-26", status: "Pending" },
-    { id: 15, orderId: "ORD015", customerName: "Ethan Brown", orderDate: "2024-02-25", status: "Processing" },
-    { id: 16, orderId: "ORD016", customerName: "Isabella Martinez", orderDate: "2024-02-24", status: "Delivered" },
-    { id: 17, orderId: "ORD017", customerName: "James Smith", orderDate: "2024-02-23", status: "Pending" },
-    { id: 18, orderId: "ORD018", customerName: "Sophia Johnson", orderDate: "2024-02-22", status: "Processing" },
-    { id: 19, orderId: "ORD019", customerName: "Logan Taylor", orderDate: "2024-02-21", status: "Cancelled" },
-    { id: 20, orderId: "ORD020", customerName: "Charlotte Brown", orderDate: "2024-02-20", status: "Delivered" },
+  const orders = [
+    { id: 1, orderId: "ORD001", customerName: "Reliance Industries", orderDate: "2024-03-10", status: "Pending" },
+    { id: 2, orderId: "ORD002", customerName: "Tata Chemicals", orderDate: "2024-03-09", status: "Delivered" },
+    { id: 3, orderId: "ORD003", customerName: "Adani Enterprises", orderDate: "2024-03-08", status: "Processing" },
+    { id: 4, orderId: "ORD004", customerName: "Hindustan Unilever", orderDate: "2024-03-07", status: "Pending" },
+    { id: 5, orderId: "ORD005", customerName: "Asian Paints", orderDate: "2024-03-06", status: "Delivered" },
+    { id: 6, orderId: "ORD006", customerName: "Indian Oil Corporation", orderDate: "2024-03-05", status: "Cancelled" },
+    { id: 7, orderId: "ORD007", customerName: "Nestle India", orderDate: "2024-03-04", status: "Processing" },
+    { id: 8, orderId: "ORD008", customerName: "ITC Limited", orderDate: "2024-03-03", status: "Pending" },
+    { id: 9, orderId: "ORD009", customerName: "Larsen & Toubro", orderDate: "2024-03-02", status: "Processing" },
+    { id: 10, orderId: "ORD010", customerName: "Wipro Limited", orderDate: "2024-03-01", status: "Delivered" },
+    { id: 11, orderId: "ORD011", customerName: "Biocon Limited", orderDate: "2024-02-29", status: "Pending" },
+    { id: 12, orderId: "ORD012", customerName: "Dr. Reddy's Laboratories", orderDate: "2024-02-28", status: "Delivered" },
+    { id: 13, orderId: "ORD013", customerName: "Bajaj Auto", orderDate: "2024-02-27", status: "Processing" },
+    { id: 14, orderId: "ORD014", customerName: "Maruti Suzuki", orderDate: "2024-02-26", status: "Pending" },
+    { id: 15, orderId: "ORD015", customerName: "Hero MotoCorp", orderDate: "2024-02-25", status: "Processing" },
+    { id: 16, orderId: "ORD016", customerName: "Dabur India", orderDate: "2024-02-24", status: "Delivered" },
+    { id: 17, orderId: "ORD017", customerName: "Pidilite Industries", orderDate: "2024-02-23", status: "Pending" },
+    { id: 18, orderId: "ORD018", customerName: "Hindustan Petroleum", orderDate: "2024-02-22", status: "Processing" },
+    { id: 19, orderId: "ORD019", customerName: "Godrej Industries", orderDate: "2024-02-21", status: "Cancelled" },
+    { id: 20, orderId: "ORD020", customerName: "Sun Pharma", orderDate: "2024-02-20", status: "Delivered" },
   ];
+  
+  
   
   
 

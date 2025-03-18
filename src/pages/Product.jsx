@@ -13,12 +13,13 @@ import Sidebar from "../component/sidebar";
 import Box from "@mui/material/Box";
 
 const products = [
-  { id: 1, name: "Apple", category: "Fruits", price: 2.99, stock: 10 },
-  { id: 2, name: "Banana", category: "Fruits", price: 1.99, stock: 20 },
-  { id: 3, name: "Carrot", category: "Vegetables", price: 0.99, stock: 30 },
-  { id: 4, name: "Donut", category: "Snacks", price: 3.99, stock: 15 },
-  { id: 5, name: "Egg", category: "Dairy", price: 4.99, stock: 12 },
+  { id: 1, name: "Bio-Ethanol Amines", category: "Industrial Chemicals", price: 50.99, stock: 100, description: "Used as solvents and surfactants in multiple applications, including personal care and fuel additives." },
+  { id: 2, name: "Green Solvents", category: "Environmentally Friendly Solutions", price: 40.99, stock: 80, description: "Biodegradable alternatives to traditional solvents, ideal for paint, coatings, and agrochemicals." },
+  { id: 3, name: "Bio-Potash Fertilizer", category: "Agriculture", price: 30.99, stock: 200, description: "FCO-grade potash-rich fertilizer derived from renewable resources, suitable for sustainable farming." },
+  { id: 4, name: "Plasticizers", category: "Manufacturing", price: 25.99, stock: 150, description: "Phthalate and non-phthalate additives for making plastics and rubber flexible and durable." },
+  { id: 5, name: "C-Smart Surfactants", category: "Personal Care", price: 60.99, stock: 60, description: "Innovative green surfactants made from C-Smart alcohol, reducing reliance on fossil fuel feedstocks." },
 ];
+
 
 const EditDeleteProduct = ({ product, onEdit, onDelete }) => {
   const [open, setOpen] = useState(false);

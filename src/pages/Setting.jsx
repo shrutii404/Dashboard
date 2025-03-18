@@ -4,46 +4,30 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Navbar from '../component/Navbar';
 
-function Setting(){
-    return(
-       <>
-       <Navbar/>
-       <Box sx={{display : "flex"}}>
-       <Sidebar/>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <h1 style={{ marginTop: '50px'}} > Setting </h1>
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
-       </Box>
-      </Box>
-     </> 
-       
-    )
+function Setting() {
+    return (
+        <>
+            <Navbar />
+            <Box sx={{ display: "flex" }}>
+                <Sidebar />
+                <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+                    <h1 style={{ marginTop: '50px' }}>Settings</h1>
+                    <Typography paragraph>
+                        Welcome to the settings page of your application. Here, you can manage various configurations, user preferences, and system settings tailored to your project needs. Ensure you have the appropriate permissions to modify critical settings.
+                    </Typography>
+                    <Typography paragraph>
+                        Below, you can find options to adjust notification preferences, integrate with other services, and configure API keys for secure access. This section allows you to customize your user experience and manage data access and application behavior.
+                    </Typography>
+                    <Typography paragraph>
+                        For advanced settings such as API rate limits, data synchronization, and custom notifications, refer to the corresponding sections within this menu. These settings help you optimize the application's performance and maintain security compliance with your company's IT policies.
+                    </Typography>
+                    <Typography paragraph>
+                        If you require assistance with these settings or would like to learn more about their functionalities, refer to the documentation or contact your system administrator.
+                    </Typography>
+                </Box>
+            </Box>
+        </>
+    );
 }
 
 export default Setting;
